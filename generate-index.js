@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const folder = './for-kids';
+const folder = './';
 const files = fs.readdirSync(folder).filter(file =>
   file.endsWith('.html') && file !== 'index.html'
 );
