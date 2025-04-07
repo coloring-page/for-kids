@@ -1,0 +1,29 @@
+name: Generate index.html for for-kids
+on:
+  push:
+    paths:
+      - '**.html'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Generate index.html
+        run: |
+          node generate-index.js
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@github.com"
+          git add for-kids/index.html
+          git commit -m "Auto-generate index.html for for-kids" || echo "No changes to commit"
+          git push
