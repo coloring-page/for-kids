@@ -17,6 +17,7 @@ ul {
   margin-top: 2rem;
 }
 li {
+  list-style-type: none;
   background: #f4a261;
   margin-bottom: 10px;
   padding: 15px;
@@ -24,11 +25,15 @@ li {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: background 0.3s;
 }
+li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+}
 li:hover {
   background: #e76f51;
 }
-a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
+li a:hover {
+  color: #007bff;
 }
